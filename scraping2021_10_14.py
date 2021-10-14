@@ -4,7 +4,7 @@ import re
 
 html = urlopen("https://mofanpy.com/static/scraping/table.html").read().decode('utf-8')
 # print((html))
-soup = BeautifulSoup(html, 'lxml')
+soup = BeautifulSoup(html, features='lxml')
 img_links = soup.find_all('img', {'src': re.compile('.*?\.jpg')})
 for link in img_links:
     print(link['src'])
